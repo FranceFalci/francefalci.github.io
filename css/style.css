@@ -1,0 +1,156 @@
+:root {
+  --primary: #0f172a;
+  --accent: #2563eb;
+  --bg: #f8fafc;
+  --text: #1e293b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* NAV */
+.nav {
+  position: fixed;
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+  z-index: 100;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(120deg, #020617, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  opacity: .9;
+}
+
+.btn {
+  background: var(--accent);
+  padding: .9rem 2rem;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* SECTIONS */
+.section {
+  padding: 6rem 10%;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dark {
+  background: #020617;
+  color: white;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.1);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-grid img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.btn-outline {
+  display: inline-block;
+  margin-top: 1.5rem;
+  border: 2px solid var(--accent);
+  padding: .8rem 1.8rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* CONTACT */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  background: #020617;
+  color: white;
+}
