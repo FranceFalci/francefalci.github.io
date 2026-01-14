@@ -1,95 +1,336 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Tu Nombre | Data Scientist</title>
+  <meta charset="UTF-8" />
+  <title>Francesca · Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <!-- AOS Animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<script>
+  const arrow = document.querySelector('.scroll-indicator');
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="logo">TuNombre</div>
-  <ul>
-    <li><a href="#projects">Proyectos</a></li>
-    <li><a href="#about">Sobre mí</a></li>
-    <li><a href="#contact">Contacto</a></li>
-  </ul>
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      arrow.style.opacity = '0';
+      arrow.style.pointerEvents = 'none';
+    } else {
+      arrow.style.opacity = '0.7';
+      arrow.style.pointerEvents = 'auto';
+    }
+  });
+</script>
+
+<body>
+<!-- <div class="cursor"></div> -->
+
+<nav>
+  <strong>PORTFOLIO</strong>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#about">About me</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-content" data-aos="fade-up">
-    <h1>Data Science & Machine Learning</h1>
-    <p>Transformando datos en decisiones inteligentes</p>
-    <a href="#projects" class="btn">Ver Proyectos</a>
+  <div>
+    <h1 class="">Francesca Falci Antacle
+      </h1>
+      <span>Computer Scientist & Programmer.</span>
+<p style="max-width: 600px; margin-top: 20px; font-size: 1.1rem; line-height: 1.6; color: #8892b0;">
+    Passionate about Mathematics, Data Science, Machine Learning, NLP, and Computer Vision. 
+    I combine strong software engineering principles with advanced statistical analysis to bring AI models from concept to production.
+</p>
+<a href="#projects">
+<div class="scroll-arrow">
+
+    <span></span>
+  </div>
+</a>
+
+
+<!-- <a href="#projects" class="btn ">Explorar proyectos</a> -->
+
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <h2 data-aos="fade-up">Proyectos</h2>
+<section id="projects">
+  <h2 class="reveal">Projects</h2>
 
-  <div class="projects-grid">
-    <div class="project-card" data-aos="fade-up">
-      <img src="assets/project1.jpg" alt="Proyecto">
-      <h3>Modelo de Predicción</h3>
-      <p>Clasificación con ML para scoring de clientes.</p>
-      <a href="https://github.com/tuusuario/proyecto" target="_blank">GitHub →</a>
+ 
+
+  <!-- NLP -->
+  <div class="project-category reveal">
+    <h3 class="category-title">Natural Language Processing</h3>
+
+   <div class="card reveal delay-2">
+  <h4>GPT Architecture Implementation from Scratch</h4>
+
+  <p>
+    Engineered a decoder-only <strong>Transformer</strong> model from first principles in <strong>PyThon</strong>, 
+    replicating the architecture of GPT-2. This project deconstructs the "black box" of LLMs, 
+    implementing the core mathematical operations behind Causal Self-Attention and Generative AI.
+  </p>
+
+  <ul class="project-bullets">
+    <li>Architected the full <strong>Multi-Head Self-Attention</strong> mechanism (Query, Key, Value) manually</li>
+    <li>Implemented <strong>Causal Masking</strong> to ensure autoregressive integrity during training</li>
+    <li>Developed learned <strong>Positional Embeddings</strong> to model sequence order and context</li>
+    <li>Optimized the training loop using AdamW optimizer and Cross-Entropy loss estimation</li>
+    <li>Generated coherent text sequences demonstrating successful language modeling capabilities</li>
+  </ul>
+
+  <p class="project-summary">
+    A deep-dive technical implementation that demonstrates mastery of the internal mechanics 
+    driving modern Large Language Models, beyond simple API usage.
+  </p>
+
+  <div class="project-stack">
+    Python · Transformer · Linear Algebra · Causal Attention · LLM Architecture
+  </div>
+</div>
+
+      <div class="card reveal delay-3">
+  <h4>End-to-End NLP Text Summarization</h4>
+
+  <p>
+    Built a comprehensive Natural Language Processing (NLP) system for <strong>Abstractive Text Summarization</strong>. 
+    Leveraged the <strong>Google PEGASUS</strong> transformer model (via Hugging Face) to generate concise, 
+    coherent summaries from long-form dialogue and text data.
+  </p>
+
+  <ul class="project-bullets">
+    <li>Implemented a modular Python pipeline: Data Ingestion, Validation, Transformation, and Model Training</li>
+    <li>Utilized <strong>Hugging Face Transformers</strong> library for fine-tuning the PEGASUS model on the SAMSum dataset</li>
+    <li>Evaluated model performance using <strong>ROUGE metrics</strong> to ensure high-quality summary generation</li>
+    <li>Designed a clean project structure with configuration management (YAML) and logging artifacts</li>
+    <li>Deployed the inference engine using a web interface (FastAPI/Flask) within a Docker container</li>
+    <li>Integrated CI/CD pipelines (GitHub Actions) for automated cloud deployment (AWS/Azure)</li>
+  </ul>
+
+  <p class="project-summary">
+    This project showcases a production-standard NLP workflow, moving from raw text data 
+    to a deployed Transformer application with rigorous evaluation metrics.
+  </p>
+
+  <div class="project-stack">
+    Python · Hugging Face · Transformers · PEGASUS · ROUGE Metrics · Docker · CI/CD
+  </div>
+</div>
+<div class="card reveal delay-3">
+  <h4>NLP Cinematic Content Analytics</h4>
+
+  <p>
+    An advanced Text Mining project that processes TV series scripts and subtitles to extract 
+    narrative insights. By combining <strong>Natural Language Processing</strong> with <strong>Graph Theory</strong>, 
+    this tool uncovers character dynamics, thematic evolution, and sentiment arcs across seasons.
+  </p>
+
+  <ul class="project-bullets">
+    <li>Engineered a custom <strong>Web Scraping</strong> pipeline to build a proprietary dataset of scripts</li>
+    <li>Applied <strong>Named Entity Recognition (NER)</strong> using <strong>Spacy</strong> to track character frequency and presence</li>
+    <li>Constructed <strong>Character Interaction Networks</strong> using <strong>NetworkX</strong> to visualize social dynamics and centrality</li>
+    <li>Performed <strong>Temporal Sentiment Analysis</strong> to map emotional trajectories of the narrative</li>
+    <li>Utilized Topic Modeling (LDA) to identify latent themes and recurring motifs in dialogue</li>
+    <li>Visualized complex text data using Matplotlib and Seaborn for data storytelling</li>
+  </ul>
+
+  <p class="project-summary">
+    This project transforms unstructured entertainment data into structured analytics, 
+    demonstrating the power of NLP to decode complex social and narrative patterns.
+  </p>
+
+  <div class="project-stack">
+    Python · Spacy · NLTK · NetworkX · Web Scraping · Pandas · Data Visualization
+  </div>
+</div>
+
     </div>
+  </div>
 
-    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
-      <img src="assets/project1.jpg" alt="Proyecto">
-      <h3>Análisis Exploratorio</h3>
-      <p>EDA y visualizaciones avanzadas con Python.</p>
-      <a href="#">Ver más →</a>
+  <!-- COMPUTER VISION -->
+  <div class="project-category reveal">
+    <h3 class="category-title">Computer Vision</h3>
+
+    <div class="grid">
+     <div class="card reveal delay-2">
+  <h4>AI Sports Analytics & Tactical Tracking</h4>
+
+  <p>
+    A sophisticated Computer Vision pipeline designed for automated football match analysis. 
+    This system tracks players, referees, and the ball in real-time to extract physical performance metrics 
+    and tactical insights from raw broadcast footage.
+  </p>
+
+  <ul class="project-bullets">
+    <li>Deployed <strong>YOLO</strong> (You Only Look Once) for robust multi-class object detection</li>
+    <li>Implemented robust <strong>Multi-Object Tracking</strong> algorithms to maintain unique player IDs despite occlusions</li>
+    <li>Utilized <strong>K-Means Clustering</strong> for automated team assignment based on jersey color analysis</li>
+    <li>Engineered <strong>Camera Motion Estimation</strong> (Optical Flow) to stabilize tracking data against broadcast pan/zoom</li>
+    <li>Applied <strong>Perspective Transformation (Homography)</strong> to map video coordinates to a 2D tactical pitch view</li>
+    <li>Calculated advanced metrics like player speed and total distance covered for performance analytics</li>
+  </ul>
+
+  <p class="project-summary">
+    This project combines deep learning with geometric computer vision to solve complex 
+    spatio-temporal tracking challenges in dynamic sports environments.
+  </p>
+
+  <div class="project-stack">
+    Python · YOLO · OpenCV · Optical Flow · K-Means · Homography · Pandas
+  </div>
+</div>
+
+     <div class="card reveal delay-3">
+  <h4>AI Tennis Stroke & Physics Analysis</h4>
+
+  <p>
+    A high-precision Computer Vision system tailored for tennis analytics. 
+    It combines object detection with custom Convolutional Neural Networks (CNNs) 
+    to track fast-moving projectiles (ball), analyze player posture, and extract court keypoints for spatial mapping.
+  </p>
+
+  <ul class="project-bullets">
+    <li>Fine-tuned <strong>YOLOv8</strong> models specifically for small-object detection (tennis ball)</li>
+    <li>Architected a custom <strong>CNN (Mini-ResNet)</strong> for Court Line Keypoint Extraction to establish a coordinate system</li>
+    <li>Implemented <strong>Time-Series Interpolation</strong> (Pandas) to reconstruct ball trajectories during occlusion/blur</li>
+    <li>Calculated physical metrics: ball velocity (km/h) and shot impact points via pixel-to-meter conversion</li>
+    <li>Developed logic to detect "Ball Bounces" and classify frames as "Hit" or "Miss" events</li>
+    <li>Visualized shot history and player movement heatmaps on the output video stream</li>
+  </ul>
+
+  <p class="project-summary">
+    This project solves the challenge of tracking high-velocity, small objects in video data, 
+    applying physics-based calculations to derive actionable sports statistics.
+  </p>
+
+  <div class="project-stack">
+    Python · YOLOv8 · PyTorch · Custom CNNs · Pandas (Interpolation) · OpenCV
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div class="project-category reveal">
+<h3 class="category-title">Deep Learning</h3>
+
+<div class="grid">
+  <div class="card reveal delay-1">
+    <h4>Scalable credit scoring system</h4>
+
+   <p>
+  Designed to estimate loan default probability from structured financial data.
+  The model is implemented in PyTorch and served via a FastAPI backend,
+  enabling scalable inference and integration with production systems.
+</p>
+
+
+    <ul class="project-bullets">
+      <li>End-to-end pipeline: preprocessing, feature engineering, training, and evaluation</li>
+      <li>Neural network classifier implemented in PyTorch for binary risk prediction</li>
+      <li>Evaluation using ROC-AUC, accuracy, precision, recall, and confusion matrix</li>
+      <li>Experiment tracking and model versioning with MLflow</li>
+      <li>Data and pipeline version control using DVC</li>
+      <li>Modular architecture based on OOP and SOLID principles</li>
+    </ul>
+
+
+    <div class="project-stack">
+      Python · PyTorch · MLflow · DVC · FastAPI· OOP · SOLID 
+    </div>
+  </div>
+</div>
+
+
+      <div class="card reveal delay-2">
+  <h4>AI Medical Object Detection (YOLOv8)</h4>
+
+  <p>
+    Computer Vision system architected to localize pathologies from Chest X-Ray images 
+    with high precision. Leveraging the state-of-the-art <strong>YOLOv8</strong> model, 
+    it provides real-time bounding box detection for assisted diagnosis.
+  </p>
+
+  <ul class="project-bullets">
+    <li>Fine-tuned YOLOv8 (Ultralytics) on custom medical datasets for pathology localization</li>
+    <li>Advanced image preprocessing and augmentation pipeline using OpenCV & Albumentations</li>
+    <li>Optimized for real-time inference speed (high FPS) without compromising accuracy (mAP)</li>
+    <li>Deployed as a microservice using FastAPI with asynchronous prediction endpoints</li>
+    <li>Model export to ONNX/TensorRT format for accelerated production deployment</li>
+    <li>Automated annotation workflows and dataset versioning with Roboflow</li>
+  </ul>
+
+
+
+  <div class="project-stack">
+    Python · YOLOv8 · PyTorch · OpenCV · FastAPI · Roboflow · ONNX
+  </div>
+</div>
+      
+<div class="card reveal delay-3">
+  <h4>AI-Driven Poultry Disease Diagnostics</h4>
+
+  <p>
+    Deep Learning solution for the automated detection of poultry diseases (e.g., Coccidiosis). 
+    Utilized a <strong>Fine-Tuning strategy</strong> on the <strong>ResNet</strong> architecture, 
+    adapting deep pre-trained layers to capture specific pathological textures and patterns high precision.
+  </p>
+
+  <ul class="project-bullets">
+    <li>Executed <strong>Fine-Tuning</strong> of ResNet weights to maximize feature extraction for specific medical imagery</li>
+    <li>End-to-end MLOps pipeline management using DVC for data versioning and reproducibility</li>
+    <li>Implemented CI/CD workflows via GitHub Actions for automated testing and deployment</li>
+    <li>Modularized code structure decoupling training, evaluation, and inference pipelines</li>
+    <li>Rigorous evaluation using confusion matrices and F1-scores to minimize false negatives</li>
+    <li>Model served as a web application/API for accessible diagnostics with FlaskAPI</li>
+  </ul>
+
+  
+
+  <div class="project-stack">
+    Python · TensorFlow · ResNet · Fine-Tuning · FlaskAPI · DVC · Docker · CI/CD
+  </div>
+</div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section dark">
-  <div class="about-grid">
-    <img src="assets/profile.jpg" alt="Perfil" data-aos="fade-right">
-    <div data-aos="fade-left">
-      <h2>Sobre mí</h2>
-      <p>
-        Soy Data Scientist con experiencia en análisis de datos, modelos
-        predictivos y automatización de procesos.
-      </p>
-      <p>
-        Trabajo con Python, SQL, Machine Learning y visualización de datos.
-      </p>
-      <a href="cv.pdf" class="btn-outline" target="_blank">Descargar CV</a>
-    </div>
-  </div>
+<section id="about">
+  <h2>About me</h2>
+  
+<p>
+I am currently completing my Bachelor’s Degree in Computer Science at the National University
+of Tucumán (Argentina), with all coursework completed ahead of schedule and a GPA of 8.57/10
+(no failed courses). 
+</p>
+<br>
+<p>
+Previously, I completed the University Programmer Degree at the same institution with a GPA of
+8.47/10, receiving an Honor Mention for the highest GPA in my cohort.
+</p>
+<br>
+<p>Alongside my academic path, I have been working as a freelance software
+developer since 2022, building and maintaining web-based systems and applications.</p>
+
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <h2 data-aos="fade-up">Contacto</h2>
-  <p data-aos="fade-up">¿Trabajamos juntos?</p>
-
-  <div class="contact-links" data-aos="fade-up">
-    <a href="mailto:tuemail@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/tuusuario" target="_blank">LinkedIn</a>
-    <a href="https://github.com/tuusuario" target="_blank">GitHub</a>
-  </div>
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="contact-links">
+    <a href="mailto:francescafacia@gmail.com">francescafacia@gmail.com</a>
+    <span>·</span>
+    <a href="https://github.com/francefalci" target="_blank" rel="noopener">GitHub</a>
+    <span>·</span>
+    <a href="https://www.linkedin.com/in/francesca-falci-antacle-8a0269245/" target="_blank" rel="noopener">LinkedIn</a>
+  </p>
 </section>
+
 
 <footer>
-  <p>© 2026 · Tu Nombre</p>
+  © 2026 · Francesca Falci Antacle
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="js/main.js"></script>
 </body>
 </html>
